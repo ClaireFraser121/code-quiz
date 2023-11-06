@@ -141,4 +141,36 @@ document.getElementById("start").addEventListener("click", function() {
     // Other logic to start the quiz, display questions, etc.
 });
 
-let 
+// Declare Global Variables 
+// declare variables to keep track of the current question index and to store the HTML elements where questions and answer choices will be displayed.
+let currentQuestionIndex = 0;
+const questionTitleElement = document.getElementById("question-title");
+const choicesElement = document.getElementById("choices");
+
+// Function to Display Questions
+// This function will update the HTML elements to show the question text and answer choices
+
+function displayQuestion(index) {
+    // Get the current question object from the 'questions' array
+    const currentQuestion = questions[index];
+
+    // Display the question text 
+    questionTitleElement.textContent = currentQuestion.questionText;
+
+    // Clear the previous answer choices
+    choicesElement.innerHTML = "";
+
+    // Create and append buttons for answer choices
+    for (let i = 0; i < currentQuestion.answerChoices.length; i++) {
+        const choiceButton = document.createElement("button");
+        choiceButton.textContent = currentQuestion.answerChoices[i];
+        choiceButton.addEventListener("click", function () {
+            handleAnswerClick(i);
+        });
+        choicesElement.appendChild(choiceButton);
+    }
+    
+}
+
+
+
