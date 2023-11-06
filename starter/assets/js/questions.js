@@ -39,3 +39,14 @@ const questions = [
   },
   // Add more question objects
 ];
+
+// Accessing Questions:
+
+// You can access specific questions and their properties by using array indexing. For example, to access the first question's text:
+
+const firstQuestionText = questions[0].questionText;
+
+// Randomization (Optional):
+
+// If you want to randomize the order of questions, you can shuffle the questions array using a randomization algorithm before presenting them to the user.
+// By creating an array of question objects, you can easily iterate through the questions, display them to the user, and check the user's selected answer against the correct answer. This data structure also makes it more straightforward to add or remove questions from your quiz in the future.
