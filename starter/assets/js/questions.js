@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
 // define variables for all required DOM nodes
-    var timerEl = document.getElementById('time');
+var timerEl = document.getElementById('time');
 var startScreenEl = document.getElementById('start-screen');
 var StartBtn = document.getElementById('start');
 var questions = document.getElementById('question');
@@ -83,6 +83,20 @@ const firstQuestionText = questions[0].questionText;
 
 // So, 'firstQuestionText' will contain the text of the first question in the quiz.
 
+// Clear the "start-screen"
+function startQuiz() {
+    // Hide the "start-screen" element
+    startScreenEl.style.display = "none";
+    
+    // Show the "questions" element
+    questions.style.display = "block";
+    
+    // Other logic to start the quiz, such as displaying the first question.
+    displayQuestion(currentQuestionIndex);
+    
+    // Start the timer when the quiz begins
+    startTimer();
+    }
 
 let timer = 60; // Initial time in seconds
 let timerInterval;
@@ -118,6 +132,8 @@ document.getElementById("start").addEventListener("click", function () {
     startTimer();
     // Other logic to start the quiz, display questions, etc.
 });
+
+
 
 // Declare Global Variables 
 // declare variables to keep track of the current question index and to store the HTML elements where questions and answer choices will be displayed.
