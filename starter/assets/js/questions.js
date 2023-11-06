@@ -109,7 +109,7 @@ const firstQuestionText = questions[0].questionText;
 let timer = 60; // Initial time in seconds
 let timerInteral;
 
-function StartTimer() {
+function startTimer() {
     // Update the timer display with the initial time
     document.getElementById("time").textContent = timer;
 
@@ -137,6 +137,8 @@ function stopTimer() {
 
 //Start the timer when the "Start Quiz" button is clicked
 document.getElementById("start").addEventListener("click", function() {
-    StartTimer();
+    startTimer();
     // Other logic to start the quiz, display questions, etc.
 });
+
+let 
