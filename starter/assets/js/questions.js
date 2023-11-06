@@ -169,8 +169,36 @@ function displayQuestion(index) {
         });
         choicesElement.appendChild(choiceButton);
     }
-    
+
 }
 
+// Function to Handle User's Answer Click
+function handleAnswerClick(answerIndex) {
+    const currentQuestion =questions[currentQuestionIndex];
 
+    if (answerIndex === currentQuestion.correctAnswer) {
+        // Update the score (if needed)
+    } else {
+        // Subtract time (if needed)
+    }
+
+    // Move to the next question
+    currentQuestionIndex++;
+
+    // Check if all questions have been answered
+    if (currentQuestionIndex < questions.length) {
+        displayQuestion(currentQuestionIndex);
+    } else {
+        //Quiz has ended
+        endQuiz();
+    }
+
+}
+
+// Start the Quiz Display the First Question
+document.getElementById("start").addEventListener("click", function () {
+    displayQuestion(currentQuestionIndex);
+    startTimer(); // Start the timer when the quiz begins
+    // Other logic to start the quiz
+});
 
