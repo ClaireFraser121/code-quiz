@@ -1,4 +1,17 @@
 document.addEventListener("DOMContentLoaded", function () {
+// define variables for all required DOM nodes
+    var timerEl = document.getElementById('time');
+var startScreenEl = document.getElementById('start-screen');
+var StartBtn = document.getElementById('start');
+var questions = document.getElementById('question');
+var questionTitleElement = document.getElementById('question-title');
+var questionsChoices = document.getElementById('choices');
+var endScreenEl = document.getElementById('end-screen');
+var finalScoreEl = document.getElementById('final-score');
+var initialInput = document.getElementById('initals');
+var submitBtn = document.getElementById('submit');
+var feedbackEl = document.getElementById('feedback');
+
 // Create an Array for Questions:
 
 // Start by creating an array to store all the questions for your quiz. Each element in the array represents a question.
@@ -109,7 +122,6 @@ document.getElementById("start").addEventListener("click", function () {
 // Declare Global Variables 
 // declare variables to keep track of the current question index and to store the HTML elements where questions and answer choices will be displayed.
 let currentQuestionIndex = 0;
-console.log
 const questionTitleElement = document.getElementById("question-title");
 const choicesElement = document.getElementById("choices");
 
