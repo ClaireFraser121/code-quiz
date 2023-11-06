@@ -1,10 +1,10 @@
-
+document.addEventListener("DOMContentLoaded", function () {
 // Create an Array for Questions:
 
 // Start by creating an array to store all the questions for your quiz. Each element in the array represents a question.
 
 // Each question can be an object containing properties like questionText, answerChoices, and correctAnswer. For example:
-const questions =  [
+const questions = [
     {
         // Each element in the 'questions' array is an object representing a question.
 
@@ -14,7 +14,7 @@ const questions =  [
         answerChoices: ["Hyper Text Markup Language", "Hyperlink and Text Markup Language", "High Text Markup Language", "Hyper Transfer Protocol"
         ],
         // 'answerChoices' property is an array that holds the available answer options for this question.
-       // there are four possible answers.
+        // there are four possible answers.
 
         correctAnswer: 0 // Index of the correct answer in the answerChoices array
         // 'correctAnswer' property specifies the index of the correct answer within the 'answerChoices' array.
@@ -57,36 +57,6 @@ const questions =  [
 // answerChoices: An array of strings that represents the answer choices for the question.
 // correctAnswer: An integer representing the index of the correct answer within the answerChoices array.
 
-// Example with Multiple Questions:
-
-// Add more question objects to the questions array for the rest of your quiz. For example:
-
-
-// const questions = [
-//     {
-//         questionText: "What does HTML stand for?",
-//         // This is the first question. The 'questionText' property holds the question itself.
-
-//         answerChoices: ["Hyper Text Markup Language", "Hyperlink and Text Markup Language", "High Text Markup Language"],
-//         // The 'answerChoices' property is an array containing the available answer options for this question.
-
-//         correctAnswer: 0
-//         // The 'correctAnswer' property specifies the index of the correct answer within the 'answerChoices' array.
-//         // In this case, the correct answer is "Hyper Text Markup Language," which is at index 0 in the 'answerChoices' array.
-//     },
-//     {
-//         questionText: "Which of the following is a CSS property to change the font size?",
-//         // This is the second question.
-
-//         answerChoices: ["font-style", "font-color", "font-size"],
-//         // The 'answerChoices' property contains the answer options for this question.
-
-//         correctAnswer: 2
-//         // The 'correctAnswer' property indicates that the correct answer is "font-size," which is at index 2 in the 'answerChoices' array.
-//     },
-//     // You can continue adding more question objects following the same structure for your quiz.
-// ];
-
 
 // Accessing Questions:
 
@@ -101,27 +71,22 @@ const firstQuestionText = questions[0].questionText;
 // So, 'firstQuestionText' will contain the text of the first question in the quiz.
 
 
-// Randomization (Optional):
-
-// If you want to randomize the order of questions, you can shuffle the questions array using a randomization algorithm before presenting them to the user.
-// By creating an array of question objects, you can easily iterate through the questions, display them to the user, and check the user's selected answer against the correct answer. This data structure also makes it more straightforward to add or remove questions from your quiz in the future.
-
 let timer = 60; // Initial time in seconds
-let timerInteral;
+let timerInterval;
 
 function startTimer() {
     // Update the timer display with the initial time
     document.getElementById("time").textContent = timer;
 
     // Start the countdown timer
-    timerInteral = setInterval(function () {
+    timerInterval = setInterval(function () {
         // Update the timer display
         document.getElementById("time").textContent = timer;
 
         // Check if the timer has reached 0
         if (timer <= 0) {
-            // TImer has reached 0, end the quiz
-            clearInterval(timerInteral);
+            // Timer has reached 0, end the quiz
+            clearInterval(timerInterval);
             endQuiz();
         } else {
             // Decrement the timer by 1 second
@@ -132,11 +97,11 @@ function startTimer() {
 
 // Create a Function to Stop timer. This will clear the interval and stop the countdown
 function stopTimer() {
-    clearInterval(timerInteral);
+    clearInterval(timerInterval);
 }
 
 //Start the timer when the "Start Quiz" button is clicked
-document.getElementById("start").addEventListener("click", function() {
+document.getElementById("start").addEventListener("click", function () {
     startTimer();
     // Other logic to start the quiz, display questions, etc.
 });
@@ -144,6 +109,7 @@ document.getElementById("start").addEventListener("click", function() {
 // Declare Global Variables 
 // declare variables to keep track of the current question index and to store the HTML elements where questions and answer choices will be displayed.
 let currentQuestionIndex = 0;
+console.log
 const questionTitleElement = document.getElementById("question-title");
 const choicesElement = document.getElementById("choices");
 
@@ -174,7 +140,7 @@ function displayQuestion(index) {
 
 // Function to Handle User's Answer Click
 function handleAnswerClick(answerIndex) {
-    const currentQuestion =questions[currentQuestionIndex];
+    const currentQuestion = questions[currentQuestionIndex];
 
     if (answerIndex === currentQuestion.correctAnswer) {
         // Update the score (if needed)
@@ -202,3 +168,4 @@ document.getElementById("start").addEventListener("click", function () {
     // Other logic to start the quiz
 });
 
+});
