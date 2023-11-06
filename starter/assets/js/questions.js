@@ -20,3 +20,22 @@ const questions = [
 // questionText: A string that contains the text of the question.
 // answerChoices: An array of strings that represents the answer choices for the question.
 // correctAnswer: An integer representing the index of the correct answer within the answerChoices array.
+
+// Example with Multiple Questions:
+
+// Add more question objects to the questions array for the rest of your quiz. For example:
+
+
+const questions = [
+  {
+    questionText: "What does HTML stand for?",
+    answerChoices: ["Hyper Text Markup Language", "Hyperlink and Text Markup Language", "High Text Markup Language"],
+    correctAnswer: 0
+  },
+  {
+    questionText: "Which of the following is a CSS property to change the font size?",
+    answerChoices: ["font-style", "font-color", "font-size"],
+    correctAnswer: 2
+  },
+  // Add more question objects
+];
